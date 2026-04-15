@@ -26,7 +26,7 @@
 		"url": "git+https://github.com/zhenghui-su/relax-monitor.git",
 		"directory": "packages/error"
 	},
-	"homepage": "https://github.com/zhenghui-su/relax-monitor/tree/main/packages/error",
+	"homepage": "https://github.com/zhenghui-su/relax-monitor/tree/master/packages/error",
 	"bugs": {
 		"url": "https://github.com/zhenghui-su/relax-monitor/issues"
 	},
