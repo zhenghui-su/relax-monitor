@@ -1,0 +1,28 @@
+{
+	"name": "@relaxwork/monitor",
+	"version": "1.0.0",
+	"description": "A lightweight JS monitor SDK",
+	"main": "index.js",
+	"scripts": {
+		"error:build": "pnpm --filter @relax/error-monitor build"
+	},
+	"keywords": [
+		"relaxwork monitor",
+		"frontend",
+		"javascript",
+		"sdk"
+	],
+	"author": {
+		"name": "zhenghui-su",
+		"email": "suzhenghui2003@qq.com"
+	},
+	"license": "MIT",
+	"packageManager": "pnpm@10.33.0",
+	"devDependencies": {
+		"@rollup/plugin-terser": "^1.0.0",
+		"@rollup/plugin-typescript": "^12.3.0",
+		"rollup": "^4.60.1",
+		"tslib": "^2.8.1",
+		"typescript": "^6.0.2"
+	}
+}

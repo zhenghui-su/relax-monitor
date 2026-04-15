@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Error Monitor SDK 靶场</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        Helvetica, Arial, sans-serif;
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .btn-group {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    button:hover {
+      background-color: #e0e0e0;
+      transform: translateY(-1px);
+    }
+
+    button:active {
+      transform: translateY(1px);
+    }
+
+    .danger {
+      color: #d32f2f;
+      border-color: #d32f2f;
+      background-color: #ffebee;
+    }
+
+    .danger:hover {
+      background-color: #ffcdd2;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>🎯 Error Monitor SDK 靶场</h1>
+  <p>点击下方按钮触发错误，观察<b>终端控制台</b>的报错输出。</p>
+
+  <div class="btn-group">
+    <button class="danger" id="btn-js">💥 触发 JS 运行时错误</button>
+    <button class="danger" id="btn-promise">💥 触发 Promise Reject</button>
+    <button class="danger" id="btn-xhr">💥 触发 XHR 请求失败</button>
+    <button class="danger" id="btn-fetch">💥 触发 Fetch 请求失败</button>
+    <button class="danger" id="btn-resource">
+      💥 触发 资源加载失败 (404)
+    </button>
+    <button class="danger" id="btn-vue">💥 触发 Vue 组件错误</button>
+    <button class="danger" id="btn-react">💥 触发 React 组件错误</button>
+  </div>
+
+  <div id="vue-app" style="
+        margin-top: 20px;
+        border: 1px dashed #42b983;
+        padding: 10px;
+        display: none;
+      ">
+    <h3>Vue 3 测试区域</h3>
+    <p>{{ message }}</p>
+    <button @click="triggerError">在 Vue 中触发错误</button>
+  </div>
+
+  <div id="react-app" style="
+        margin-top: 20px;
+        border: 1px dashed #61dafb;
+        padding: 10px;
+        display: none;
+      "></div>
+
+  <!-- 引入 SDK (本地打包版本) -->
+  <script src="../dist/index.umd.js"></script>
+
+  <!-- 引入框架依赖 (使用国内镜像加速) -->
+  <!-- Vue 3 -->
+  <script src="https://npm.elemecdn.com/vue@3/dist/vue.global.js"></script>
+  <!-- React 18 & ReactDOM 18 -->
+  <script crossorigin src="https://npm.elemecdn.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://npm.elemecdn.com/react-dom@18/umd/react-dom.development.js"></script>
+
+  <script src="./index.js" type="module"></script>
+</body>
+
+</html>
