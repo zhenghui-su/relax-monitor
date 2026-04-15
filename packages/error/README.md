@@ -23,16 +23,47 @@ npm install @relaxwork/error-monitor
 在你的应用入口文件（例如 `main.js` 或 `App.tsx`）中初始化 SDK。
 
 ```javascript
-import { initErrorMonitor } from 'error-monitor-sdk';
+import { initErrorMonitor } from '@relaxwork/error-monitor';
 
 initErrorMonitor({
 	reportUrl: 'https://your-monitoring-server.com/api/report', // 你的错误上报接口地址
 	projectName: 'my-awesome-project', // 项目名称
 	environment: 'production', // 当前环境，如 'development', 'staging', 'production' 等
-   networkConfig: {
-      ignoreNetworkErrors: []; // 需要忽略的网络错误地址
-   }
+	networkConfig: {
+		ignoreNetworkErrors: [], // 需要忽略的网络错误地址
+	},
 });
+```
+
+## 忽略特定网络请求示例
+
+如果你的项目中存在不需要上报的请求，例如健康检查、埋点上报、轮询接口，可以通过 `networkConfig.ignoreNetworkErrors` 配置忽略地址片段。
+
+```javascript
+import { initErrorMonitor } from '@relaxwork/error-monitor';
+
+initErrorMonitor({
+	reportUrl: 'http://localhost:3000/error-report',
+	projectName: 'my-awesome-project',
+	environment: 'development',
+	networkConfig: {
+		ignoreNetworkErrors: [
+			'/health',
+			'/metrics',
+			'http://localhost:9999/not-report',
+		],
+	},
+});
+```
+
+例如下面这类请求地址命中忽略规则后，即使请求失败，也不会触发网络错误上报：
+
+```javascript
+fetch('http://localhost:9999/not-report');
+
+const xhr = new XMLHttpRequest();
+xhr.open('GET', 'http://localhost:9999/not-report');
+xhr.send();
 ```
 
 ## 框架插件使用

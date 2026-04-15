@@ -59,12 +59,18 @@
 <body>
   <h1>🎯 Error Monitor SDK 靶场</h1>
   <p>点击下方按钮触发错误，观察<b>终端控制台</b>的报错输出。</p>
+  <p>
+    其中“忽略网络错误”示例会请求已配置在
+    <code>ignoreNetworkErrors</code>
+    中的地址，预期不会触发错误上报。
+  </p>
 
   <div class="btn-group">
     <button class="danger" id="btn-js">💥 触发 JS 运行时错误</button>
     <button class="danger" id="btn-promise">💥 触发 Promise Reject</button>
     <button class="danger" id="btn-xhr">💥 触发 XHR 请求失败</button>
     <button class="danger" id="btn-fetch">💥 触发 Fetch 请求失败</button>
+    <button id="btn-ignore-network">✅ 触发被忽略的网络请求失败</button>
     <button class="danger" id="btn-resource">
       💥 触发 资源加载失败 (404)
     </button>

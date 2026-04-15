@@ -7,6 +7,8 @@
  */
 console.log('正在初始化 SDK (CDN 模式)...', relaxworkErrorMonitor);
 
+const ignoredNetworkUrl = 'http://localhost:9999/not-report';
+
 // 手动初始化全局监控 (捕获 JS/网络/资源错误)
 // 注意：如果是 Vue/React 场景，通常由插件或辅助函数自动调用，
 // 这里显式调用是为了演示基础功能的独立使用。
@@ -14,6 +16,9 @@ relaxworkErrorMonitor.initErrorMonitor({
 	reportUrl: 'http://localhost:3000/error-report',
 	projectName: 'Test-Playground-Global',
 	environment: 'dev',
+	networkConfig: {
+		ignoreNetworkErrors: [ignoredNetworkUrl],
+	},
 });
 
 /**
@@ -49,7 +54,17 @@ document.getElementById('btn-fetch').onclick = () => {
 	fetch('http://localhost:9999/not-exist'); // 端口不存在
 };
 
-// 5. 资源加载错误 (Resource Load Error)
+// 5. 命中 ignoreNetworkErrors 的网络错误
+// 预期：请求会失败，但不会触发 SDK 上报
+document.getElementById('btn-ignore-network').onclick = () => {
+	fetch(ignoredNetworkUrl).catch(() => {});
+
+	const xhr = new XMLHttpRequest();
+	xhr.open('GET', ignoredNetworkUrl);
+	xhr.send();
+};
+
+// 6. 资源加载错误 (Resource Load Error)
 // 预期：捕获到 'Resource Load Error'，且不冒泡到 window.onerror
 document.getElementById('btn-resource').onclick = () => {
 	const img = document.createElement('img');
@@ -65,7 +80,7 @@ document.getElementById('btn-resource').onclick = () => {
  * =========================================================================
  */
 
-// 6. Vue 3 组件错误测试
+// 7. Vue 3 组件错误测试
 // 原理：通过 app.config.errorHandler 全局捕获
 document.getElementById('btn-vue').onclick = () => {
 	const vueContainer = document.getElementById('vue-app');
@@ -96,7 +111,7 @@ document.getElementById('btn-vue').onclick = () => {
 	vueContainer.__vue_app__ = app;
 };
 
-// 7. React 18 组件错误测试
+// 8. React 18 组件错误测试
 // 原理：通过 Error Boundary 包裹组件树捕获
 document.getElementById('btn-react').onclick = () => {
 	const reactContainer = document.getElementById('react-app');

@@ -21,6 +21,15 @@
 		"javascript",
 		"sdk"
 	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/zhenghui-su/relax-monitor.git",
+		"directory": "packages/error"
+	},
+	"homepage": "https://github.com/zhenghui-su/relax-monitor/tree/main/packages/error",
+	"bugs": {
+		"url": "https://github.com/zhenghui-su/relax-monitor/issues"
+	},
 	"author": {
 		"name": "zhenghui-su",
 		"email": "suzhenghui2003@qq.com"
