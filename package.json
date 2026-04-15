@@ -4,7 +4,7 @@
 	"description": "A lightweight JS monitor SDK",
 	"main": "index.js",
 	"scripts": {
-		"error:build": "pnpm --filter @relax/error-monitor build"
+		"error:build": "pnpm --filter @relaxwork/error-monitor build"
 	},
 	"keywords": [
 		"relaxwork monitor",
@@ -12,6 +12,14 @@
 		"javascript",
 		"sdk"
 	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/zhenghui-su/relax-monitor.git"
+	},
+	"homepage": "https://github.com/zhenghui-su/relax-monitor",
+	"bugs": {
+		"url": "https://github.com/zhenghui-su/relax-monitor/issues"
+	},
 	"author": {
 		"name": "zhenghui-su",
 		"email": "suzhenghui2003@qq.com"
