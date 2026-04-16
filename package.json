@@ -4,7 +4,11 @@
 	"description": "A lightweight JS monitor SDK",
 	"main": "index.js",
 	"scripts": {
-		"error:build": "pnpm --filter @relaxwork/error-monitor build"
+		"error:build": "pnpm --filter @relaxwork/error-monitor build",
+		"error:demo": "pnpm --filter @relaxwork/error-monitor demo",
+		"behavior:build": "pnpm --filter @relaxwork/behavior-monitor build",
+		"behavior:demo": "pnpm --filter @relaxwork/behavior-monitor demo",
+		"build": "pnpm run error:build && pnpm run behavior:build"
 	},
 	"keywords": [
 		"relaxwork monitor",

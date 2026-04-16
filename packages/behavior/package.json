@@ -1,0 +1,47 @@
+{
+	"name": "@relaxwork/behavior-monitor",
+	"version": "1.0.0",
+	"description": "A lightweight JS user behavior monitor SDK",
+	"main": "dist/index.cjs.js",
+	"module": "dist/index.esm.js",
+	"browser": "dist/index.umd.js",
+	"types": "dist/index.d.ts",
+	"type": "module",
+	"scripts": {
+		"build": "rollup -c",
+		"dev": "rollup -c -w",
+		"demo": "node test/server.js"
+	},
+	"keywords": [
+		"relaxwork behavior monitor",
+		"frontend",
+		"javascript",
+		"sdk"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/zhenghui-su/relax-monitor.git",
+		"directory": "packages/behavior"
+	},
+	"homepage": "https://github.com/zhenghui-su/relax-monitor/tree/master/packages/behavior",
+	"bugs": {
+		"url": "https://github.com/zhenghui-su/relax-monitor/issues"
+	},
+	"author": {
+		"name": "zhenghui-su",
+		"email": "suzhenghui2003@qq.com"
+	},
+	"license": "MIT",
+	"packageManager": "pnpm@10.33.0",
+	"dependencies": {
+		"@fingerprintjs/fingerprintjs": "^5.2.0"
+	},
+	"devDependencies": {
+		"@rollup/plugin-node-resolve": "^16.0.3",
+		"cors": "^2.8.6",
+		"express": "^5.2.1"
+	},
+	"peerDependencies": {
+		"@fingerprintjs/fingerprintjs": "^5.2.0"
+	}
+}
