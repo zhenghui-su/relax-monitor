@@ -8,7 +8,9 @@
 		"error:demo": "pnpm --filter @relaxwork/error-monitor demo",
 		"behavior:build": "pnpm --filter @relaxwork/behavior-monitor build",
 		"behavior:demo": "pnpm --filter @relaxwork/behavior-monitor demo",
-		"build": "pnpm run error:build && pnpm run behavior:build",
+		"performance:build": "pnpm --filter @relaxwork/performance-monitor build",
+		"performance:demo": "pnpm --filter @relaxwork/performance-monitor demo",
+		"build": "pnpm run error:build && pnpm run behavior:build && pnpm run performance:build",
 		"release": "tsx scripts/index.ts",
 		"release:dry": "tsx scripts/index.ts --dry-run"
 	},

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>性能 SDK 测试</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #f9f9f9;
+    }
+
+    h1 {
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      color: #333;
+    }
+
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h3 {
+      margin-top: 0;
+      color: #555;
+    }
+
+    button {
+      padding: 10px 15px;
+      cursor: pointer;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background: coral;
+      margin: 10px 0;
+      display: inline-block;
+      border-radius: 4px;
+    }
+
+    #log {
+      background: #1e1e1e;
+      color: #0f0;
+      padding: 15px;
+      border-radius: 4px;
+      height: 300px;
+      overflow-y: auto;
+      font-family: 'Consolas', monospace;
+      font-size: 13px;
+    }
+
+    .log-entry {
+      margin: 5px 0;
+      border-bottom: 1px solid #333;
+      padding-bottom: 2px;
+    }
+
+    .status-ok {
+      color: green;
+      font-weight: bold;
+    }
+
+    .status-err {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>性能 SDK 测试平台</h1>
+
+  <div class="card">
+    <h3>SDK 状态</h3>
+    <div id="status">初始化中...</div>
+  </div>
+
+  <div class="card">
+    <h3>测试操作</h3>
+    <p>点击下方按钮触发不同的性能指标：</p>
+    <div>
+      <button id="btn-interaction">触发交互（点击）</button>
+      <button id="btn-longtask">触发长任务（100ms）</button>
+      <button id="btn-network">触发网络请求</button>
+      <button id="btn-cls">触发 CLS（布局移位）</button>
+      <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0" />
+      <p><strong>SPA 路由模拟：</strong></p>
+      <button id="btn-route-1">跳转到 /page1</button>
+      <button id="btn-route-2">跳转到 /page2</button>
+    </div>
+    <div id="content-area">
+      <h4 id="page-title">当前页面：首页</h4>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>活动日志</h3>
+    <div id="log"></div>
+  </div>
+
+  <!-- 从 dist 导入 UMD 构建 -->
+  <script src="../dist/index.umd.js"></script>
+  <!-- 模块化测试用例 -->
+  <script src="./utils.js"></script>
+  <script src="./case-interaction.js"></script>
+  <script src="./case-longtask.js"></script>
+  <script src="./case-network.js"></script>
+  <script src="./case-cls.js"></script>
+</body>
+
+</html>

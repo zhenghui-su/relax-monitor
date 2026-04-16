@@ -2,6 +2,12 @@
 
 一个轻量级的前端用户行为监控 SDK，用于采集页面访问、点击行为、页面停留时长以及 SPA 路由切换等行为数据。
 
+相关文档：
+
+- 仓库总览见 [README.md](/Users/suzhenghui/Desktop/IWantTo/study/@relax/monitor/README.md)
+- 错误监控见 [packages/error/README.md](/Users/suzhenghui/Desktop/IWantTo/study/@relax/monitor/packages/error/README.md)
+- 性能监控见 [packages/performance/README.md](/Users/suzhenghui/Desktop/IWantTo/study/@relax/monitor/packages/performance/README.md)
+
 ## 功能特性
 
 - **UV 统计**: 初始化时自动记录当日 UV，仅当天首次进入时上报一次。

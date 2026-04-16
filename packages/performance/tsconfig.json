@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"target": "es2015",
+		"module": "esnext",
+		"declaration": true,
+		"declarationDir": "./dist",
+		"rootDir": "./src",
+		"strict": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"moduleResolution": "bundler",
+		"lib": ["es2015", "dom"],
+		"ignoreDeprecations": "6.0"
+	},
+	"include": ["src/**/*"]
+}

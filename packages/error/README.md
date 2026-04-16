@@ -6,6 +6,7 @@
 
 - 仓库总览见 [README.md](/Users/suzhenghui/Desktop/IWantTo/study/@relax/monitor/README.md)
 - 用户行为监控见 [packages/behavior/README.md](/Users/suzhenghui/Desktop/IWantTo/study/@relax/monitor/packages/behavior/README.md)
+- 性能监控见 [packages/performance/README.md](/Users/suzhenghui/Desktop/IWantTo/study/@relax/monitor/packages/performance/README.md)
 
 ## 功能特性
 
