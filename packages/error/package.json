@@ -37,7 +37,6 @@
 	"license": "MIT",
 	"packageManager": "pnpm@10.33.0",
 	"devDependencies": {
-		"@relaxwork/error-monitor": "^1.0.0",
 		"cors": "^2.8.6",
 		"express": "^5.2.1"
 	}

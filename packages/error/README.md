@@ -2,6 +2,11 @@
 
 一个轻量级的前端错误监控 SDK，可以捕获 JavaScript 错误、Promise 异常、网络请求错误以及资源加载错误。
 
+相关文档：
+
+- 仓库总览见 [README.md](/Users/suzhenghui/Desktop/IWantTo/study/@relax/monitor/README.md)
+- 用户行为监控见 [packages/behavior/README.md](/Users/suzhenghui/Desktop/IWantTo/study/@relax/monitor/packages/behavior/README.md)
+
 ## 功能特性
 
 - **JavaScript 错误监控**: 捕获未捕获的 JavaScript 错误 (`window.onerror`)。
