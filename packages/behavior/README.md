@@ -15,7 +15,7 @@
 ## 安装
 
 ```bash
-npm install @relaxwork/behavior-monitor @fingerprintjs/fingerprintjs
+npm install @relaxwork/behavior-monitor
 ```
 
 ## 使用方法
@@ -60,12 +60,12 @@ initUserBehaviorMonitor({
 
 ## 采集行为说明
 
-| 行为类型 | `behavior` 值 | 触发时机 | 说明 |
-| --- | --- | --- | --- |
-| UV | `uv` | 当天首次初始化 SDK 时 | 每个用户每天只会上报一次 |
-| PV | `pv` | 首屏加载、SPA 路由切换时 | 记录页面浏览次数 |
-| 点击 | `click` | 点击带 `data-track-click` 的元素时 | 自动采集点击行为 |
-| 页面停留时长 | `page_stay_duration` | 页面隐藏、关闭、卸载、路由切换前 | 统计上一页面停留时间 |
+| 行为类型     | `behavior` 值        | 触发时机                           | 说明                     |
+| ------------ | -------------------- | ---------------------------------- | ------------------------ |
+| UV           | `uv`                 | 当天首次初始化 SDK 时              | 每个用户每天只会上报一次 |
+| PV           | `pv`                 | 首屏加载、SPA 路由切换时           | 记录页面浏览次数         |
+| 点击         | `click`              | 点击带 `data-track-click` 的元素时 | 自动采集点击行为         |
+| 页面停留时长 | `page_stay_duration` | 页面隐藏、关闭、卸载、路由切换前   | 统计上一页面停留时间     |
 
 ## SPA 路由示例
 
@@ -88,10 +88,10 @@ history.pushState({}, '', '/product/1001');
 
 `initUserBehaviorMonitor` 接收以下配置：
 
-| 属性名 | 类型 | 说明 |
-| --- | --- | --- |
-| `reportUrl` | `string` | **必填**。行为数据上报接口地址 |
-| `projectName` | `string` | **必填**。项目名称或项目标识 |
+| 属性名        | 类型     | 说明                           |
+| ------------- | -------- | ------------------------------ |
+| `reportUrl`   | `string` | **必填**。行为数据上报接口地址 |
+| `projectName` | `string` | **必填**。项目名称或项目标识   |
 
 ## 上报数据示例
 

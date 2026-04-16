@@ -8,7 +8,9 @@
 		"error:demo": "pnpm --filter @relaxwork/error-monitor demo",
 		"behavior:build": "pnpm --filter @relaxwork/behavior-monitor build",
 		"behavior:demo": "pnpm --filter @relaxwork/behavior-monitor demo",
-		"build": "pnpm run error:build && pnpm run behavior:build"
+		"build": "pnpm run error:build && pnpm run behavior:build",
+		"release": "tsx scripts/index.ts",
+		"release:dry": "tsx scripts/index.ts --dry-run"
 	},
 	"keywords": [
 		"relaxwork monitor",
@@ -35,6 +37,7 @@
 		"@rollup/plugin-typescript": "^12.3.0",
 		"rollup": "^4.60.1",
 		"tslib": "^2.8.1",
+		"tsx": "^4.21.0",
 		"typescript": "^6.0.2"
 	}
 }
